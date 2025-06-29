@@ -5,7 +5,7 @@ export default function Command() {
   const { favorites, hasFavorites } = useFavorite("volume");
 
   return (
-    <MenuBarExtra icon={Icon.SpeakerHigh} isLoading={!favorites} tooltip="Kef volume">
+    <MenuBarExtra icon={Icon.Speaker} isLoading={!favorites} tooltip="Kef volume">
       {hasFavorites ? (
         favorites.map((favorite) => <MenuBarExtra.Item key={favorite} title={`${favorite}%`} onAction={() => {}} />)
       ) : (
