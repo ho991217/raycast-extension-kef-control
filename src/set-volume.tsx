@@ -1,7 +1,7 @@
 import { List } from "@raycast/api";
-import { groupBy } from "es-toolkit";
 import { useFavorite } from "./hooks/use-favorite";
 import { VolumeItem } from "./components/volume-item";
+import { groupBy } from "./utils/group-by";
 
 const ITEMS = Array.from({ length: 21 }, (_, i) => i * 5);
 

@@ -1,6 +1,6 @@
 import { Action, ActionPanel, Icon, List, showHUD } from "@raycast/api";
-import setVolume from "../tools/set-volume";
 import { useFavorite } from "../hooks/use-favorite";
+import { useVolume } from "../hooks/use-volume";
 
 export type VolumeItemProps = {
   value: number;
@@ -8,6 +8,7 @@ export type VolumeItemProps = {
 
 export function VolumeItem({ value }: VolumeItemProps) {
   const { addFavorite, removeFavorite, isFavorite } = useFavorite("volume");
+  const { setVolume } = useVolume();
 
   return (
     <List.Item
@@ -20,7 +21,7 @@ export function VolumeItem({ value }: VolumeItemProps) {
             title="Set Volume"
             icon={Icon.Speaker}
             onAction={async () => {
-              await setVolume(value);
+              setVolume(value);
               showHUD(`Volume set to ${value}%`);
             }}
           />

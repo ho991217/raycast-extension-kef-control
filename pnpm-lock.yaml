@@ -14,9 +14,6 @@ importers:
       '@raycast/utils':
         specifier: ^1.17.0
         version: 1.19.1(@raycast/api@1.100.3(@types/node@22.13.10)(@types/react@19.0.10))
-      es-toolkit:
-        specifier: ^1.39.5
-        version: 1.39.5
     devDependencies:
       '@raycast/eslint-config':
         specifier: ^2.0.4
@@ -618,9 +615,6 @@ packages:
 
   emoji-regex@8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
-
-  es-toolkit@1.39.5:
-    resolution: {integrity: sha512-z9V0qU4lx1TBXDNFWfAASWk6RNU6c6+TJBKE+FLIg8u0XJ6Yw58Hi0yX8ftEouj6p1QARRlXLFfHbIli93BdQQ==}
 
   esbuild@0.25.5:
     resolution: {integrity: sha512-P8OtKZRv/5J5hhz0cUAdu/cLuPIKXpQl1R9pZtvmHWQvrAUVd0UNIPT4IB4W3rNOqVO0rlqHmCIbSwxh/c9yUQ==}
@@ -1649,8 +1643,6 @@ snapshots:
       jake: 10.9.2
 
   emoji-regex@8.0.0: {}
-
-  es-toolkit@1.39.5: {}
 
   esbuild@0.25.5:
     optionalDependencies:

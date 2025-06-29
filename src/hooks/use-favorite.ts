@@ -1,6 +1,6 @@
 import { useCallback, useSyncExternalStore, useEffect, useMemo } from "react";
 import { useLocalStorage } from "@raycast/utils";
-import { favoriteStore } from "../store/favorite-store";
+import { favoriteStore } from "../stores/favorite-store";
 
 export const useFavorite = (kind: "volume" | "source") => {
   const { value, setValue } = useLocalStorage<number[]>(`favorites:${kind}`);
