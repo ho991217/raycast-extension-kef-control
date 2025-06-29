@@ -1,28 +1,13 @@
 import { Action, ActionPanel, Icon, List, showHUD } from "@raycast/api";
 import setVolume from "../tools/set-volume";
-import { use } from "react";
-import { FavoriteContext } from "../favorite-context";
+import { useFavorite } from "../hooks/use-favorite";
 
 export type VolumeItemProps = {
   value: number;
 };
 
 export function VolumeItem({ value }: VolumeItemProps) {
-  const { favorites, setFavorites } = use(FavoriteContext);
-
-  const isFavorite = favorites?.includes(value);
-
-  const addToFavorites = () => {
-    const newValue = [...(favorites ?? []), value].sort((a, b) => a - b);
-    setFavorites(newValue);
-    showHUD(`Volume ${value}% added to favorites`);
-  };
-
-  const removeFromFavorites = () => {
-    const newValue = (favorites ?? []).filter((v) => v !== value).sort((a, b) => a - b);
-    setFavorites(newValue);
-    showHUD(`Volume ${value}% removed from favorites`);
-  };
+  const { addFavorite, removeFavorite, isFavorite } = useFavorite("volume");
 
   return (
     <List.Item
@@ -40,10 +25,10 @@ export function VolumeItem({ value }: VolumeItemProps) {
             }}
           />
           <Action
-            title={isFavorite ? "Remove from Favorites" : "Add to Favorites"}
-            icon={isFavorite ? Icon.StarDisabled : Icon.Star}
+            title={isFavorite(value) ? "Remove from Favorites" : "Add to Favorites"}
+            icon={isFavorite(value) ? Icon.StarDisabled : Icon.Star}
             shortcut={{ modifiers: ["cmd", "shift"], key: "f" }}
-            onAction={isFavorite ? removeFromFavorites : addToFavorites}
+            onAction={isFavorite(value) ? () => removeFavorite(value) : () => addFavorite(value)}
           />
         </ActionPanel>
       }

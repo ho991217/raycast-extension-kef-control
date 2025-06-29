@@ -21,7 +21,15 @@
       "description": "Set the source of the kef (wifi, bluetooth, tv, optical, usb, aux)",
       "mode": "view"
     }
-  ],
+  ,
+    {
+      "name": "set-volume-menubar",
+      "title": "Set Volume Menubar",
+      "subtitle": "Kef",
+      "description": "Set volume of the Kef speaker through menu bar",
+      "mode": "menu-bar"
+    }
+      ],
   "tools": [
     {
       "name": "set-volume",
